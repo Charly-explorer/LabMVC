@@ -8,12 +8,13 @@ import java.util.List;
 
 /**
  *
- * @author jprod
+ * @author Student
  */
-public interface IManager<T> extends IManagerAbstract<T> {
-
-    public boolean set(T element);
-
-    public boolean remove(T element);
+public interface IManagerAbstract<T> {  
+    
+    public boolean add(T element);
+    
+    public T get(T element); 
         
+    public List getAll();
 }
