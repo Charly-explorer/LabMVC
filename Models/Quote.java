@@ -4,7 +4,8 @@
  */
 package Models;
 
-import Utils.UtilDate;
+import static Models.QuoteState.Activo;
+import java.time.LocalDate;
 
 /**
  *
@@ -13,11 +14,12 @@ import Utils.UtilDate;
 public class Quote {
    private String id;
    private String custumer;
-   private UtilDate date;
-   private UtilDate hour;
+   private LocalDate date;
+   private LocalDate hour;
    private String reason;
    private String medic;
-
+   private QuoteState state;
+   
     public String getId() {
         return id;
     }
@@ -26,11 +28,11 @@ public class Quote {
         return custumer;
     }
 
-    public UtilDate getDate() {
+    public LocalDate getDate() {
         return date;
     }
 
-    public UtilDate getHour() {
+    public LocalDate getHour() {
         return hour;
     }
 
@@ -42,21 +44,22 @@ public class Quote {
         return medic;
     }
 
-    public void setDate(UtilDate date) {
+    public void setDate(LocalDate date) {
         this.date = date;
     }
 
-    public void setHour(UtilDate hour) {
+    public void setHour(LocalDate hour) {
         this.hour = hour;
     }
 
-    public Quote(String id, String custumer, UtilDate date, UtilDate hour, String reason, String medic) {
+    public Quote(String id, String custumer, LocalDate date, LocalDate hour, String reason, String medic) {
         this.id = id;
         this.custumer = custumer;
         this.date = date;
         this.hour = hour;
         this.reason = reason;
         this.medic = medic;
+        this.state = Activo;
     }
     
     public Quote(){
